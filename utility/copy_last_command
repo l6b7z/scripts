@@ -1,0 +1,10 @@
+#!/bin/zsh
+
+# echo -n !!:q | xsel --clipboard
+
+# tail -n 2 ~/.config/zsh/z_history | xsel --clipboard
+
+export HISTFILE=~/.config/zsh/z_history
+fc -R
+# echo $(fc -l | tail -n 1 --lines=1 | sed -n '1p' | sed 's/[0-9]*   //' )
+fc -l | tail -2 | head -1 | sed 's/.*[0-9]*  //' | xsel --clipboard

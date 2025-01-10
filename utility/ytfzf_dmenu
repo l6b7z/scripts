@@ -1,0 +1,8 @@
+#!/bin/bash
+
+DMENU_OPTS="$(dmenu_pos -w 20) -l 2"
+
+case "$(printf "ytfzf video\\nytfzf playlist" | dmenu $DMENU_OPTS )" in
+       "ytfzf video") $TERMINAL -e ytfzf -t -l --ytdl-pref="bestvideo[height<=1080]+bestaudio/best" ;;
+       "ytfzf playlist") $TERMINAL -e ytfzf -t -l --ytdl-pref="bestvideo[height<=720]+bestaudio/best" --type="playlist" ;;
+esac

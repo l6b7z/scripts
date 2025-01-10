@@ -1,0 +1,13 @@
+#!/bin/bash
+
+t="/tmp/app_menu"
+
+touch $t
+
+l="$ZK_DIR_APP_LIST"
+
+ls $l > $t
+sed -i -E '/^(#|$)/d' $t
+choice=$(dmenu $ZK_DMENU_OPTS_DEFAULT < $t) || exit 1
+
+$("$l/$choice")

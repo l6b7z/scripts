@@ -1,0 +1,7 @@
+#!/bin/bash
+
+case $BLOCK_BUTTON in
+  # 1)
+esac
+
+free --mebi | sed -n '2{p;q}' | awk '{printf("%2.1f/%2.0f%\n",$3/1000,$3*100/$2)}'
