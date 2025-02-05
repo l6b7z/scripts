@@ -1,0 +1,6 @@
+#!/bin/zsh
+
+export HISTFILE=~/.config/zsh/z_history
+
+fc -R
+fc -l | tail -2 | head -1 | sed 's/.*[0-9]*  //' | xsel --clipboard
