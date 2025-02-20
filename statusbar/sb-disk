@@ -1,7 +1,7 @@
 #!/bin/bash
 
 case $BLOCK_BUTTON in
-  # 1) 
+  # 1) st -e lfrun /home/l6b7/.local/share/Trash/files ;;
 esac
 
 sizeMB=$(($(df -t ext4 --output=used | awk 'FNR == 2 {print}')/1024+200))

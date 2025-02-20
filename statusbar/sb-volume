@@ -1,9 +1,10 @@
 #!/bin/bash
 
 case $BLOCK_BUTTON in
+  # 3) st -t ns -e pulsemixer;;    
   1) changevolume mute;;
-  4) changevolume up;;
-  5) changevolume down;; 
+	4) changevolume up;;
+	5) changevolume down;; 
 esac
 
 vol="$(wpctl get-volume @DEFAULT_AUDIO_SINK@)"
